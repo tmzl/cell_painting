@@ -22,7 +22,8 @@ Set global python for the computer:
 
 ## Setting up the enviroment and requirements
 
-On GitHub --> Code --> Download
+On GitHub --> Code --> Download ZIP
+
 Deploy the download locally and use the terminal to establish Python environment using the following steps:
 
 Move the working directory in terminal to selected local deployment. 
