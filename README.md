@@ -1,8 +1,8 @@
 # Cell Painting Script
 First landing for the in-house cell painting script - work in progress.
 
-## Setting up the python
-Setting up the python on the system via pyenv (https://github.com/pyenv-win/pyenv-win)
+## Setting up the Python
+Setting up the Python on the system via pyenv (https://github.com/pyenv-win/pyenv-win)
 
 Open powershell (terminal VIA MS store) + run:
 
