@@ -47,3 +47,40 @@ Install the dependancies:
 
 `pip install -r .\requirements.txt`
 
+## Data structure
+
+When saving data, to use our renaming.py, the data needs to be in the following structure.
+
+CHEMICAL/data/biorep_X/day_X/channel
+
+Be mindful not to use excess number of _ since we will use a regular expression in the CellProfiler based on the number of _ and folder structure.
+
+## Running the pipeline
+
+### Renaming the files
+
+First step is to correctly rename all of the files for each chemical. Use the path to the CHEMICAL:
+
+`python renaming.py --root-path=</path/to/txt/CHEMICAL>`
+
+### CellProfiler feature extraction
+
+After file renaming, we import the whole CHEMICAL folder into the CellProfiler.
+
+Use this regex expression to correctly parse the file names:
+
+`^(?P<Chemical>.*?_.*?)_(?P<Biorep>.*?_.*?)_(?P<Day>.*?_.*?)_(?P<Channel>.*?_.*?)_(?P<Well>[^_]*)_s(?P<Site>[^.]*)\.png$`
+
+?? WHICH FILES TO COLLECT ??
+Only MitoDay5Image.txt ?
+
+?? 
+Collect all relevant CellPainter into a specified folder.
+
+### Pooling the CellProfiler data
+
+Prepare the meta_table.txt according to the desired pooling option (sum / mean) for each column data type.
+
+Run the script to pool all the data according to the meta_table.txt in a specified folder:
+
+`python pooling_profiler.py --txt-dir=</path/to/txt/files>`
